@@ -6,7 +6,7 @@
   --color-5: azure;
   --search-bar-height: 1.75rem;
   --search-bar-width: 25rem;
-  --card-height: 17.5rem;
+  --card-height: 20rem;
   --card-width: calc(var(--card-height) / 1.5);
 }
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
@@ -125,6 +125,7 @@ main .topBar {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin: 2rem;
 }
 .card .card-header {
   height: calc(var(--card-height) * 0.375);
@@ -139,12 +140,20 @@ main .topBar {
 }
 .card .card-body {
   height: calc(var(--card-height) * 0.475);
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  padding-left: calc(var(--card-height) * 0.05);
-  padding-right: calc(var(--card-height) * 0.05);
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  align-items: center;
+  /* padding-left: calc(var(--card-height) * 0.05);
+  padding-right: calc(var(--card-height) * 0.05); */
+  overflow: hidden;
+  /* background-color: blue; */
 }
 .card .card-body header {
+  /* margin-bottom: auto; */
+  width: 100%;
   text-align: center;
   letter-spacing: 0.1rem;
   font-weight: bolder;
@@ -153,7 +162,8 @@ main .topBar {
 .card .card-body ul {
   list-style: none;
   margin: 0;
-  padding: 0 1rem 0 1rem;
+  /* padding: 0 1rem 0 1rem; */
+  /* background-color:aqua; */
 }
 .card .card-footer {
   display: flex;
@@ -172,3 +182,23 @@ main .topBar {
 /* =================================================================== */
 /*     FINAL DE ESTILOS PARA LAS CARDS      */
 /* =================================================================== */
+.loading{
+  width: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  display: grid;
+  place-items: center;
+}
+.spinner{
+  width: 150px;
+  height: 150px;
+  margin: 2rem;
+  border: 15px solid var(--color-3);
+  border-top-color: var(--color-2) ;
+  border-radius: 50%;
+  animation: spin 1s ease infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
