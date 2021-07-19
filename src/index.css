@@ -175,6 +175,7 @@ main .topBar {
   width: 70%;
   text-align: center;
   text-decoration: none;
+  color: white;
   border: 1px solid var(--color-5);
   border-radius: 2.5px;
   cursor: pointer;

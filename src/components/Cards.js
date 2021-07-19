@@ -22,25 +22,29 @@ const CardBody = (props) =>{
   )
 }
 
-const CardFooter = () =>{
+const CardFooter = (props) =>{
+  const {url} = props
   return (
     <div className="card-footer">
-      <a>Ver mas</a>
+      <a href={url}>Ver mas</a>
     </div>
   );
 }
 
 const Cards = (props) =>{
-  const {cardInfo:items} = props;
+  const {cardInfo:items,filtrados} = props;
   return(
     <div className="container-for-cards">
-      {items.map(element => (
-        <div className="card" key={element.id}>
-          <CardHeader header={element}/>
-          <CardBody body={element}/>
-          <CardFooter/>
-        </div>
-      ))}
+      {items.map(element =>{
+        if(element.name.toLowerCase().includes(filtrados))
+        return(
+          <div className="card" key={element.id}>
+            <CardHeader header={element}/>
+            <CardBody body={element}/>
+            <CardFooter url={element.url}/>
+          </div>
+        )
+      })}
     </div>
   )
 }
